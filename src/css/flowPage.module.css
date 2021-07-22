@@ -1,0 +1,18 @@
+.cardContainer{
+    overflow-y:hidden;
+    height:auto;
+    width:80vw;
+    margin-left:5vw;
+    border-radius: 20px;
+    margin-bottom:20px;
+    margin-top:20px;
+}
+
+.profileImage{
+    height:90px;
+    width:90px;
+}
+
+.profileImageCircle{
+    border-radius: 45px;
+}
