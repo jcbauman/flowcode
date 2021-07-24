@@ -1,6 +1,6 @@
 import React, {CSSProperties} from 'react';
 import {FlowPage, FlowPageLink, FlowPageTheme, Page} from "../types/interfaces";
-import {getBackgroundColor} from '../config/helperMethods';
+import {getBackgroundColor, getColorHSL} from '../config/helperMethods';
 import styles from '../css/flowPageExpanded.module.css';
 
 interface FlowPageExpandedProps{
@@ -22,11 +22,15 @@ export default function FlowPageExpanded(props:FlowPageExpandedProps){
         return (
             <div className={styles.expandedPage}
                 style={getBackgroundColor(pageData.theme)}>
-                <h4>{pageData.displayName}</h4>
+                <h2 className={getColorHSL(pageData.theme).lightness > 0.6 ? styles.textDark: styles.textLight}>
+                    {pageData.displayName}
+                </h2>
                 <img
                     className={`${styles.profileImage} ${pageData.theme.profileImageShapeType === 'circle' ? styles.profileImageCircle : styles.profileImageSquare}`}
                     src={pageData.profileImage} alt={`${pageData.displayName}'s Profile`}/>
-                <h5>{pageData.caption || ''}</h5>
+                <h5 className={getColorHSL(pageData.theme).lightness > 0.6 ? styles.textDark: styles.textLight}>
+                    {pageData.caption || ''}
+                </h5>
                 {pageData.links.map((linkData: FlowPageLink) => (
                         <div className={styles.linkItem} onClick={() => window.open(linkData.actionData.link, '_blank')}>
                             {linkData.thumbNailImgUrl ? <img className={styles.linkIconImage} src={linkData.thumbNailImgUrl} alt={''}/> : ''}

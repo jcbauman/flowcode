@@ -2,7 +2,7 @@
     overflow-y:hidden;
     height:auto;
     width:80vw;
-    margin-left:5vw;
+    margin-left:10vw;
     border-radius: 20px;
     margin-bottom:20px;
     margin-top:20px;
@@ -10,6 +10,29 @@
     cursor:pointer;
     color:black;
     transition:.5s;
+    text-decoration: none;
+}
+
+@media only screen and (min-width: 680px) and (max-width: 1000px){
+    .cardContainer{
+        width:35vw;
+        margin:5vh 0 5vh 5vw;
+        height:50vh;
+    }
+    .cardContainer:nth-child(2n - 1){
+        margin-left:10vw
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .cardContainer{
+        width:18vw;
+        margin:5vh 0 5vh 3vw;
+        height:50vh;
+    }
+    .cardContainer:first-child{
+         margin-left:10vw;
+    }
 }
 
 .cardContainer:hover{
@@ -20,6 +43,7 @@
 .profileImage{
     height:90px;
     width:90px;
+    margin-bottom: 12px;
 }
 
 .profileImageCircle{
@@ -28,4 +52,12 @@
 
 .profileImageSquare{
     border-radius: 10px;
+}
+
+.textDark{
+    color:black;
+}
+
+.textLight{
+    color:white;
 }

@@ -9,7 +9,6 @@ export interface FlowPageExplorerProps{
     trendingPages:Array<Page>;
 }
 
-
 export default function FlowPageExplorer(props:FlowPageExplorerProps) {
     const {trendingPages} = props;
     const [filter,setFilter] = useState<string>('');

@@ -9,11 +9,17 @@
     background-color: white;
     color:black;
     cursor:pointer;
-    margin:24px;
+    margin:24px 24px 24px 10vw;
     border-radius: 10px;
     height:60px;
-  align-items:center;
-         display:inline-flex;
+    align-items:center;
+    text-align: center;
+    display:inline-flex;
+    flex-direction: row;
+    transition:.5s;
+    width:80vw;
+    left:0;
+    position:absolute;
 }
 
 .linkItem:hover{
@@ -44,4 +50,12 @@
 
 .profileImageSquare{
     border-radius: 20px;
+}
+
+.textDark{
+    color:black;
+}
+
+.textLight{
+    color:white;
 }
