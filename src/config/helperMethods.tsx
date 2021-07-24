@@ -6,3 +6,5 @@ export const getBackgroundColor = (theme:FlowPageTheme) => {
         }
         return;
     };
+
+export const filterConfig : Array<{title:string,filterString:string}> = [{title:'All',filterString:''},{title:'Writers',filterString:'writer'},{title:'Athletes',filterString:'athlete'},{title:'Influencers',filterString:'influencer'}];

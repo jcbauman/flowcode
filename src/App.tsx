@@ -10,7 +10,7 @@ import {FlowPageExpanded, FlowPageExplorer} from "./components";
 const App: React.FC = () => {
 
     const [trendingPages,setTrendingPages] = useState<Array<Page>>([]);
-    const [pageSlugs, setPageSlugs] = useState<Array<string>>(["/andrew", "/ta", "/corey", "/sam"]);
+    const [pageSlugs, setPageSlugs] = useState<Array<string>>([]);
 
     //get data from pages endpoint
     useEffect(  () => {
@@ -20,23 +20,13 @@ const App: React.FC = () => {
             .catch(error => console.log(error));
     },[]);
 
+    //process array of available slugs for Router
     useEffect( () => {
         let slugs = trendingPages.map((page:Page) => {
             return '/' + page.pages[0].slugName;
         });
         setPageSlugs(slugs);
     },[trendingPages]);
-
-    const getMatchingPage = () => {
-        console.log('matching',window.location.pathname,pageSlugs);
-        let filteredPages = trendingPages.filter((page:Page) => {
-            console.log(page.pages[0].slugName,window.location.pathname,page.pages[0].slugName === window.location.pathname);
-            return page.pages[0].slugName === window.location.pathname});
-        console.log('matching',window.location.pathname,pageSlugs,filteredPages);
-        if(filteredPages.length > 0){
-            return filteredPages[0];
-        }
-    };
 
 
     return (

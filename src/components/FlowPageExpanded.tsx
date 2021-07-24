@@ -29,8 +29,8 @@ export default function FlowPageExpanded(props:FlowPageExpandedProps){
                 <h5>{pageData.caption || ''}</h5>
                 {pageData.links.map((linkData: FlowPageLink) => (
                         <div className={styles.linkItem} onClick={() => window.open(linkData.actionData.link, '_blank')}>
-                            <h5>{linkData.title}</h5>
-                            <img className={styles.iconImage} src={linkData.thumbNailImgUrl} alt={''}/>
+                            {linkData.thumbNailImgUrl ? <img className={styles.linkIconImage} src={linkData.thumbNailImgUrl} alt={''}/> : ''}
+                            <h5 className={styles.linkText}>{linkData.title}</h5>
                         </div>
                     )
                 )}

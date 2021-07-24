@@ -1,0 +1,29 @@
+.flowExplorer{
+    width:100vw;
+    min-height:100vh;
+    height:auto;
+    overflow-y:hidden;
+}
+
+.filterContainer{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left:5vw;
+    position:absolute;
+}
+
+.filterButton{
+    cursor: pointer;
+    padding:10px;
+    transition:.5s;
+}
+
+.filterButtonSelected,
+.filterButton:hover{
+    color:red;
+}
+
+.pageContainer{
+    margin-top:70px;
+}
