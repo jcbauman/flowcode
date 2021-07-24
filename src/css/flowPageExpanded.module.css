@@ -3,17 +3,16 @@
     height:auto;
     min-height:100vh;
     overflow-y: hidden;
+    align-content: center;
 }
 
 .linkItem{
-    background-color: white;
-    color:black;
     cursor:pointer;
     margin:24px 24px 24px 10vw;
     border-radius: 10px;
     height:60px;
     align-items:center;
-    text-align: center;
+    justify-content: center;
     display:inline-flex;
     flex-direction: row;
     transition:.5s;
@@ -58,4 +57,41 @@
 
 .textLight{
     color:white;
+}
+
+.linkItemDark{
+    background-color: black;
+    color:white;
+}
+
+.linkItemLight{
+    background-color: white;
+    color:black;
+}
+
+.shareButtonContainer{
+    width:100%;
+    text-align: center;
+}
+
+.shareButton {
+    cursor: pointer;
+    background-color: lightblue;
+    width: 100px;
+    margin:auto;
+    transition:0.5s;
+    border-radius: 3px;
+}
+
+.shareButtonText{
+    font-size: 16px;
+    padding:5px
+}
+
+.shareButton:hover,
+.shareButtonCopied{
+    background-color: deepskyblue;
+    width: 100px;
+    margin:auto;
+    border-radius: 3px;
 }

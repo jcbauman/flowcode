@@ -26,7 +26,6 @@ export interface FlowPageTheme {
 }
 
 export interface FlowPageLink{
-
     id: number;
     link: string;
     provider: string;
