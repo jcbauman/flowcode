@@ -18,7 +18,7 @@ export default function FlowPageExpanded(props:FlowPageExpandedProps){
         if(justCopied) {
             setTimeout(function () {
                 setJustCopied(false);
-            }, 2000);
+            }, 1200);
         }
     },[justCopied])
 

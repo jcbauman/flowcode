@@ -21,6 +21,13 @@
     position:absolute;
 }
 
+@media only screen and (min-width: 900px){
+    .linkItem{
+        width:60vw;
+        margin:24px 24px 24px 20vw;
+    }
+}
+
 .linkItem:hover{
     box-shadow: 0 4px 8px 0 darkred, 0 6px 20px 0 red;
     transform:scale(1.05);
@@ -29,12 +36,13 @@
 .linkIconImage{
     width:40px;
     height:40px;
-    padding:20px;
     object-fit: cover;
+    padding:0;
 }
 
 .linkText{
-    padding:20px;
+    padding:10px;
+    margin:0;
     font-weight: normal;
 }
 
@@ -67,11 +75,6 @@
 .linkItemLight{
     background-color: white;
     color:black;
-}
-
-.shareButtonContainer{
-    width:100%;
-    text-align: center;
 }
 
 .shareButton {

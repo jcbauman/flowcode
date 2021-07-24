@@ -20,7 +20,7 @@
         height:50vh;
     }
     .cardContainer:nth-child(2n - 1){
-        margin-left:10vw
+        margin-left:10vw!important;
     }
 }
 
@@ -41,13 +41,13 @@
 }
 
 .profileImage{
-    height:90px;
-    width:90px;
+    height:150px;
+    width:150px;
     margin-bottom: 12px;
 }
 
 .profileImageCircle{
-    border-radius: 45px;
+    border-radius: 75px;
 }
 
 .profileImageSquare{
