@@ -98,3 +98,16 @@
     margin:auto;
     border-radius: 3px;
 }
+
+.backButton{
+    position:fixed;
+    left:25px;
+    top:25px;
+    cursor: pointer;
+}
+
+.backButton > img{
+    transform: rotateZ(180deg);
+    width:20px;
+    height:20px;
+}

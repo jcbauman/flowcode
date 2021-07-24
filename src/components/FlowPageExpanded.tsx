@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import {FlowPage, FlowPageLink, Page} from "../types/interfaces";
 import {getBackgroundColor, getColorHSL} from '../config/helperMethods';
 import styles from '../css/flowPageExpanded.module.css';
+import {Link} from "react-router-dom";
+import {rightArrow} from "../images";
 
 interface FlowPageExpandedProps{
     slug:string;
@@ -14,16 +16,7 @@ export default function FlowPageExpanded(props:FlowPageExpandedProps){
     //for storing sharable link copying state
     const [justCopied,setJustCopied] = useState(false);
 
-    useEffect(() => {
-        if(justCopied) {
-            setTimeout(function () {
-                setJustCopied(false);
-            }, 1200);
-        }
-    },[justCopied])
-
     // filter page based on pathname slug
-    // NOTE: a more specific api to get a single page would be less error prone here
     let filteredPages = trendingPages.filter((page:Page) => {
         return '/'+ page.pages[0].slugName === slug});
 
@@ -40,10 +33,22 @@ export default function FlowPageExpanded(props:FlowPageExpandedProps){
         setJustCopied(true);
     };
 
+    //adjust sharable link copying UI after ~1 second
+     useEffect(() => {
+        if(justCopied) {
+            setTimeout(function () {
+                setJustCopied(false);
+            }, 1200);
+        }
+    },[justCopied])
+
     if(pageData) {
         return (
             <div className={styles.expandedPage}
                  style={getBackgroundColor(pageData.theme)}>
+                <Link className={styles.backButton} to='/'>
+                    <img src={rightArrow}/>
+                </Link>
                 <h2 className={getColorHSL(pageData.theme).lightness > 0.6 ? styles.textDark: styles.textLight}>
                     {pageData.displayName}
                 </h2>

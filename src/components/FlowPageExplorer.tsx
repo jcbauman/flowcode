@@ -20,23 +20,23 @@ export default function FlowPageExplorer(props:FlowPageExplorerProps) {
         } else {
             return trendingPages.filter((page:Page) => page.category === filterString);
         }
-   };
+    };
 
     return(
         <div className={styles.flowExplorer}>
-        <div className={styles.filterContainer}>
-            {filterConfig.map((filterSet:{title:string,
-                filterString:string}) =>
-                <p className={`${styles.filterButton} ${filter === filterSet.filterString ? styles.filterButtonSelected : ''}`} onClick={() => setFilter(filterSet.filterString)}>
-                    {filterSet.title}
-                </p>
-            )}
-        </div>
-        <div className={styles.pageContainer}>
-            {filteredPages(filter).map((page:Page) =>
-                <FlowPageCard page={page}/>
-            )}
-        </div>
+            <div className={styles.filterContainer}>
+                {filterConfig.map((filterSet:{title:string,
+                    filterString:string}) =>
+                    <p className={`${styles.filterButton} ${filter === filterSet.filterString ? styles.filterButtonSelected : ''}`} onClick={() => setFilter(filterSet.filterString)}>
+                        {filterSet.title}
+                    </p>
+                )}
+            </div>
+            <div className={styles.pageContainer}>
+                {filteredPages(filter).map((page:Page) =>
+                    <FlowPageCard page={page}/>
+                )}
+            </div>
         </div>
     )
 }
