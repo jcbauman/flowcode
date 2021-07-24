@@ -1,5 +1,5 @@
-import React, {CSSProperties} from 'react';
-import {FlowPageTheme, Page} from "../types/interfaces";
+import React from 'react';
+import {Page} from "../types/interfaces";
 import {Link} from 'react-router-dom';
 import {getBackgroundColor, getColorHSL} from '../config/helperMethods';
 import styles from '../css/flowPage.module.css';
@@ -11,7 +11,6 @@ interface FlowPageCardProps{
 export default function FlowPageCard(props:FlowPageCardProps){
     const {page} = props;
     const pageData = (page || {pages:[]}).pages[0] || {};
-    console.log(pageData.displayName,getColorHSL(pageData.theme));
     return (
         <Link to={`/${pageData.slugName}`} className={styles.cardContainer}
               style={getBackgroundColor(pageData.theme)}>

@@ -34,7 +34,7 @@ export default function FlowPageExpanded(props:FlowPageExpandedProps){
     };
 
     //adjust sharable link copying UI after ~1 second
-     useEffect(() => {
+    useEffect(() => {
         if(justCopied) {
             setTimeout(function () {
                 setJustCopied(false);
@@ -62,7 +62,7 @@ export default function FlowPageExpanded(props:FlowPageExpandedProps){
                     <div className={!justCopied ? styles.shareButton : styles.shareButtonCopied} onClick={() => copySharingLink()}>
                         <p className={styles.shareButtonText}>{!justCopied ? 'Share' : 'Copied!'}</p>
 
-                </div>: ''}
+                    </div>: ''}
                 {pageData.links.map((linkData: FlowPageLink) => (
                         <div className={`${styles.linkItem} ${getColorHSL(pageData.theme).lightness > 0.6 ? styles.linkItemDark: styles.linkItemLight}`}
                              onClick={() => window.open(linkData.actionData.link, '_blank')}>

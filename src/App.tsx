@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import {Switch} from 'react-router';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
-import {GET_PAGES_ENDPOINT} from "./store/requests";
 import {Page} from "./types/interfaces";
 import {FlowPageExpanded, FlowPageExplorer} from "./components";
 
@@ -11,6 +10,7 @@ const App: React.FC = () => {
 
     const [trendingPages,setTrendingPages] = useState<Array<Page>>([]);
     const [pageSlugs, setPageSlugs] = useState<Array<string>>([]);
+    const GET_PAGES_ENDPOINT =  'https://dtxsharedprodcdn2.blob.core.windows.net/random/flowpages-mock-data.json';
 
     //get data from pages endpoint
     useEffect(  () => {

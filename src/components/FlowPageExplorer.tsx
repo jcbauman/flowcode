@@ -1,4 +1,4 @@
-import React, {CSSProperties, useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {Page} from "../types/interfaces";
 import {FlowPageCard} from "./index";
 import {filterConfig} from "../config/helperMethods";
