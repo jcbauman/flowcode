@@ -25,3 +25,7 @@
 .profileImageCircle{
     border-radius: 45px;
 }
+
+.profileImageSquare{
+    border-radius: 10px;
+}

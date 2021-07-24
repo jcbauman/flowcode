@@ -1,0 +1,38 @@
+.expandedPage{
+    width:100vw;
+    height:auto;
+    min-height:100vh;
+    overflow-y: hidden;
+}
+
+.linkItem{
+    background-color: white;
+    color:black;
+    cursor:pointer;
+    margin:24px;
+    border-radius: 10px;
+    height:60px;
+}
+
+.linkItem:hover{
+    box-shadow: 0 4px 8px 0 darkred, 0 6px 20px 0 red;
+    transform:scale(1.05);
+}
+
+.iconImage{
+    width:40px;
+    height:40px;
+}
+
+.profileImage{
+    height:200px;
+    width:200px;
+}
+
+.profileImageCircle{
+    border-radius: 100px;
+}
+
+.profileImageSquare{
+    border-radius: 20px;
+}

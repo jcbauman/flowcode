@@ -17,7 +17,7 @@ export default function FlowPageCard(props:FlowPageCardProps){
               style={getBackgroundColor(pageData.theme)}>
             <h4>{pageData.displayName}</h4>
             <img
-                className={`${styles.profileImage} ${pageData.theme.profileImageShapeType === 'circle' ? styles.profileImageCircle : ''}`}
+                className={`${styles.profileImage} ${pageData.theme.profileImageShapeType === 'circle' ? styles.profileImageCircle : styles.profileImageSquare}`}
                 src={pageData.profileImage} alt={`${pageData.displayName}'s Profile`}/>
         </Link>
     );
