@@ -12,7 +12,7 @@ export default function FlowPageCard(props:FlowPageCardProps){
     const {page} = props;
     const pageData = (page || {pages:[]}).pages[0] || {};
     return (
-        <Link to={`/${pageData.slugName}`} className={styles.cardContainer}
+        <Link to={`${process.env.PUBLIC_URL}/${pageData.slugName}`} className={styles.cardContainer}
               style={getBackgroundColor(pageData.theme)}>
             <h4 className={getColorHSL(pageData.theme).lightness > 0.6 ? styles.textDark: styles.textLight}>{pageData.displayName}</h4>
             <img
