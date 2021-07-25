@@ -29,7 +29,6 @@
 }
 
 .linkItem:hover{
-    box-shadow: 0 4px 8px 0 darkred, 0 6px 20px 0 red;
     transform:scale(1.05);
 }
 
