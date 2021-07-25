@@ -2,8 +2,6 @@ import React, {useState, useEffect} from 'react';
 import {FlowPage, FlowPageLink, Page} from "../types/interfaces";
 import {getBackgroundColor, getColorHSL} from '../config/helperMethods';
 import styles from '../css/flowPageExpanded.module.css';
-import {Link} from "react-router-dom";
-import {rightArrow} from "../images";
 
 interface FlowPageExpandedProps{
     slug:string;
@@ -46,9 +44,6 @@ export default function FlowPageExpanded(props:FlowPageExpandedProps){
         return (
             <div className={styles.expandedPage}
                  style={getBackgroundColor(pageData.theme)}>
-                <Link className={styles.backButton} to='/'>
-                    <img src={rightArrow}/>
-                </Link>
                 <h2 className={getColorHSL(pageData.theme).lightness > 0.6 ? styles.textDark: styles.textLight}>
                     {pageData.displayName}
                 </h2>

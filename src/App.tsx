@@ -23,7 +23,7 @@ const App: React.FC = () => {
     //process array of available slugs for Router
     useEffect( () => {
         let slugs = trendingPages.map((page:Page) => {
-            return '/' + page.pages[0].slugName;
+            return process.env.PUBLIC_URL + '/' + page.pages[0].slugName;
         });
         setPageSlugs(slugs);
     },[trendingPages]);
@@ -34,7 +34,7 @@ const App: React.FC = () => {
             <div className="App">
                 <header className="App-header">
                     <Switch>
-                        <Route path="/" exact render={() => (<FlowPageExplorer trendingPages={trendingPages}/>) }/>} />
+                        <Route path={process.env.PUBLIC_URL + '/'} exact render={() => (<FlowPageExplorer trendingPages={trendingPages}/>) }/>} />
                         <Route path={pageSlugs} render={() => <FlowPageExpanded slug={window.location.pathname} trendingPages={trendingPages}/> } />
                     </Switch>
                 </header>
