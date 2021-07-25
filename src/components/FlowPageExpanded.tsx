@@ -60,7 +60,8 @@ export default function FlowPageExpanded(props:FlowPageExpandedProps){
                     </div>: ''}
                 {pageData.links.map((linkData: FlowPageLink) => (
                         <div className={`${styles.linkItem} ${getColorHSL(pageData.theme).lightness > 0.6 ? styles.linkItemDark: styles.linkItemLight}`}
-                             onClick={() => window.open(linkData.actionData.link, '_blank')}>
+                             onClick={() => window.open(linkData.actionData.link, '_blank')}
+                             key={`${linkData.title}-button`}>
                             {linkData.thumbNailImgUrl ? <img className={styles.linkIconImage} src={linkData.thumbNailImgUrl} alt={''}/> : ''}
                             <h5 className={styles.linkText}>{linkData.title}</h5>
                         </div>
