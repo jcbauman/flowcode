@@ -16,7 +16,7 @@ export default function FlowPageExpanded(props:FlowPageExpandedProps){
 
     // filter page based on pathname slug
     let filteredPages = trendingPages.filter((page:Page) => {
-        return '/'+ page.pages[0].slugName === slug});
+        return process.env.PUBLIC_URL + '/'+ page.pages[0].slugName === slug});
 
     const pageData:FlowPage | undefined = filteredPages[0] ? filteredPages[0].pages[0] : undefined;
 
