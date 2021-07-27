@@ -26,6 +26,7 @@ const App: React.FC = () => {
             return process.env.PUBLIC_URL + '/' + page.pages[0].slugName;
         });
         setPageSlugs(slugs);
+        console.log(trendingPages);
     },[trendingPages]);
 
 
